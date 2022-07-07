@@ -3,7 +3,6 @@ import axios from "axios";
 import fightersRepository from "../repositories/fightersRepository.js";
 
 async function getStargazers(username: string) {
-  try {
     let stargazers = 0;
     const { data } = await axios.get(
       `https://api.github.com/users/${username}/repos`
@@ -12,9 +11,6 @@ async function getStargazers(username: string) {
       stargazers += repository.stargazers_count;
     });
     return stargazers;
-  } catch (error) {
-    console.log(error);
-  }
 }
 
 async function insertFighter(username: string) {
