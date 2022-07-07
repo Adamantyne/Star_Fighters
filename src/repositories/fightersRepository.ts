@@ -12,7 +12,7 @@ async function getRanking() {
     return await db.query(
         `
         SELECT username,wins,losses,draws FROM fighters 
-        ORDER BY wins
+        ORDER BY wins DESC
         `
     );
 }

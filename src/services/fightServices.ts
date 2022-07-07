@@ -5,7 +5,6 @@ import fightersRepository from "../repositories/fightersRepository.js";
 async function getStargazers(username: string) {
   try {
     let stargazers = 0;
-    console.log(stargazers)
     const { data } = await axios.get(
       `https://api.github.com/users/${username}/repos`
     );
@@ -14,7 +13,7 @@ async function getStargazers(username: string) {
     });
     return stargazers;
   } catch (error) {
-    //console.log(error);
+    console.log(error);
   }
 }
 
